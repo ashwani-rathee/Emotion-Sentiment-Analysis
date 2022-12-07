@@ -1,0 +1,55 @@
+{% extends 'bootstrap/base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block styles %}
+{{ super() }}
+	<style>
+		body { background: #e8f1f9; }
+        hr.new2 {
+    border-top: 1px dashed black;
+    }
+
+	</style>
+{% endblock %}
+
+
+{% block title %}
+Best Movie Actors
+{% endblock %}
+
+
+{% block content %}
+
+<div class="container">
+  <div class="row">
+    <p class="col-md-10 col-lg-8 mx-lg-auto mx-md-auto">
+
+      <h1 class="pt-5 pb-2">Emotion Sentiment Analysis</h1>
+
+      <p class="lead">In this project, we worked on Emotion Sentiment Analysis for our 7th sem project. The aim of the project was to identify the emotion in the given audio file which was a recording of human audio. Using deep learning techniques we were able to classify audios into different emotions and through this webapp, the project is deployed for to be used in a production environment.</p>
+      <img src="{{url_for('static', filename='1.png')}}">
+
+
+      
+      <div>
+        <h2>Testing: </h2>
+        {{ wtf.quick_form(form) }}
+        <h2>Results: </h2>
+        <p>Emotion in audio file is: {{ message }} </p>
+
+      </div>
+      <hr class="new2">
+      <p class="lead">In dataset we used for training namely TESS. It's provided by University of Toronto and dataset for training emotion (7 cardinal emotions) classification in audio. There are a set of 200 target words were spoken in the carrier phrase "Say the word _' by two actresses (aged 26 and 64 years) and recordings were made of the set portraying each of seven emotions (anger, disgust, fear, happiness, pleasant surprise, sadness, and neutral). There are 2800 data points (audio files) in total.</p>
+      <p class="lead">We found the below distribution when we were trying to distinguish different audioes, as can be noticed, there are almost non overlapping 14 clusters(7 emotions* 2 speakers = 14). </p> 
+      <img src="{{url_for('static', filename='newplot.png')}}">
+
+
+      
+
+      
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,8 @@
+flask
+gunicorn
+numpy
+Pillow
+tensorflow-cpu
+flask_bootstrap
+flask_wtf
+wtforms
