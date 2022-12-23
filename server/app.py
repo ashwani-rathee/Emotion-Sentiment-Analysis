@@ -115,8 +115,9 @@ def home():
  "4": "neutral", 
  "5": "sad", 
  "6": "surprise" }
+        alld = [[result[str(i)], j ]for i,j in enumerate(x)]
         test = result[str(d)]
-        return render_template('index.html', form=form, message = test)
+        return render_template('index.html', form=form, message = test, alld = alld)
     
     return render_template('index.html', form=form)
 
